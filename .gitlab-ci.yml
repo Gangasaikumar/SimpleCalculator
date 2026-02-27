@@ -1,0 +1,40 @@
+image: node:latest
+
+# Define cache to speed up jobs and keep logs clean
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - node_modules/
+
+stages:
+  - install
+  - test
+  - build
+
+install_dependencies:
+  stage: install
+  script:
+    - echo "Starting dependency installation..."
+    - npm install --prefer-offline --no-audit
+    - echo "Dependencies installed successfully."
+  artifacts:
+    paths:
+      - node_modules/
+    expire_in: 1 hour
+
+lint_code:
+  stage: test
+  script:
+    - echo "Running linter..."
+    - npm run lint
+    - echo "Linting completed."
+
+build_project:
+  stage: build
+  script:
+    - echo "Starting build process..."
+    - npm run build
+    - echo "Build completed successfully."
+  artifacts:
+    paths:
+      - dist/
