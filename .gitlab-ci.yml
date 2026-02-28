@@ -1,16 +1,14 @@
 image: node:latest
 
 variables:
+  GIT_STRATEGY: none
   GITHUB_REPO: "https://oauth2:${GITHUB_TOKEN}@github.com/Gangasaikumar/SimpleCalculator.git"
-  WORKDIR: source
 
 before_script:
   - echo "Cloning latest code..."
-  - rm -rf $WORKDIR
   - git clone $GITHUB_REPO .
-  - cd $WORKDIR
   - git checkout main
-  - npm ci # ⭐ install deps here
+  - npm ci
 
 stages:
   - test
@@ -28,7 +26,8 @@ unit_tests:
   artifacts:
     when: always
     paths:
-      - $WORKDIR/coverage/
+      - coverage/
+      - junit.xml
 
 build_project:
   stage: build
@@ -36,4 +35,4 @@ build_project:
     - npm run build
   artifacts:
     paths:
-      - $WORKDIR/dist/
+      - dist/
