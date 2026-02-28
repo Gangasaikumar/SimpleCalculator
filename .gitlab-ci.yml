@@ -22,12 +22,14 @@ install_dependencies:
       - node_modules/
     expire_in: 1 hour
 
-lint_code:
+unit_tests:
   stage: test
   script:
     - echo "Running linter..."
     - npm run lint
-    - echo "Linting completed."
+    - echo "Running tests..."
+    - npm run test
+    - echo "Testing completed."
 
 build_project:
   stage: build

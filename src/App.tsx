@@ -1,26 +1,14 @@
 import React, { useState } from "react";
 import "./App.css";
 
-const specialChars = ["%", "*", "/", "-", "+", "="];
+import { calculateResult } from "./utils/calculator";
 
 const App: React.FC = () => {
   const [output, setOutput] = useState<string>("");
 
   const calculate = (btnValue: string) => {
-    if (btnValue === "=" && output !== "") {
-      try {
-        setOutput(eval(output.replace("%", "/100")));
-      } catch {
-        setOutput("Error");
-      }
-    } else if (btnValue === "AC") {
-      setOutput("");
-    } else if (btnValue === "DEL") {
-      setOutput(output.slice(0, -1));
-    } else {
-      if (output === "" && specialChars.includes(btnValue)) return;
-      setOutput(output + btnValue);
-    }
+    const nextOutput = calculateResult(output, btnValue);
+    setOutput(nextOutput);
   };
 
   return (
