@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="16" failures="0" errors="0" time="0.2075337">
+    <testsuite name="app_testcases/App.test.tsx" timestamp="2026-02-28T10:10:40.428Z" hostname="Gangasai_kumar" tests="6" failures="0" errors="0" skipped="0" time="0.2042775">
+        <testcase classname="app_testcases/App.test.tsx" name="App Component &gt; renders the calculator display" time="0.1135378">
+        </testcase>
+        <testcase classname="app_testcases/App.test.tsx" name="App Component &gt; updates display when number buttons are clicked" time="0.0228807">
+        </testcase>
+        <testcase classname="app_testcases/App.test.tsx" name="App Component &gt; performs addition correctly" time="0.0195587">
+        </testcase>
+        <testcase classname="app_testcases/App.test.tsx" name="App Component &gt; clears the display when AC is clicked" time="0.0172325">
+        </testcase>
+        <testcase classname="app_testcases/App.test.tsx" name="App Component &gt; deletes the last character when DEL is clicked" time="0.0147416">
+        </testcase>
+        <testcase classname="app_testcases/App.test.tsx" name="App Component &gt; shows Error for invalid expressions" time="0.0147967">
+        </testcase>
+    </testsuite>
+    <testsuite name="app_testcases/calculator.test.ts" timestamp="2026-02-28T10:10:40.434Z" hostname="Gangasai_kumar" tests="10" failures="0" errors="0" skipped="0" time="0.0032562">
+        <testcase classname="app_testcases/calculator.test.ts" name="calculator logic &gt; should handle basic addition" time="0.0008951">
+        </testcase>
+        <testcase classname="app_testcases/calculator.test.ts" name="calculator logic &gt; should handle subtraction" time="0.0001607">
+        </testcase>
+        <testcase classname="app_testcases/calculator.test.ts" name="calculator logic &gt; should handle multiplication" time="0.0001345">
+        </testcase>
+        <testcase classname="app_testcases/calculator.test.ts" name="calculator logic &gt; should handle division" time="0.0001435">
+        </testcase>
+        <testcase classname="app_testcases/calculator.test.ts" name="calculator logic &gt; should handle percentage" time="0.0001203">
+        </testcase>
+        <testcase classname="app_testcases/calculator.test.ts" name="calculator logic &gt; should clear the output on AC" time="0.0000859">
+        </testcase>
+        <testcase classname="app_testcases/calculator.test.ts" name="calculator logic &gt; should delete the last character on DEL" time="0.0000952">
+        </testcase>
+        <testcase classname="app_testcases/calculator.test.ts" name="calculator logic &gt; should handle invalid expressions" time="0.0001187">
+        </testcase>
+        <testcase classname="app_testcases/calculator.test.ts" name="calculator logic &gt; should not allow starting with a special character" time="0.0001044">
+        </testcase>
+        <testcase classname="app_testcases/calculator.test.ts" name="calculator logic &gt; should append numbers and operators" time="0.000124">
+        </testcase>
+    </testsuite>
+</testsuites>
