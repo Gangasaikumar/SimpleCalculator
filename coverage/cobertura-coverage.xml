@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage lines-valid="21" lines-covered="21" line-rate="1" branches-valid="14" branches-covered="14" branch-rate="1" timestamp="1772266954187" complexity="0" version="0.1">
+<coverage lines-valid="21" lines-covered="21" line-rate="1" branches-valid="14" branches-covered="14" branch-rate="1" timestamp="1772267030560" complexity="0" version="0.1">
   <sources>
     <source>C:/Users/ganga/OneDrive/Desktop/gitlab test/SimpleCalculator</source>
   </sources>

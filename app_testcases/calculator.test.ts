@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { calculateResult } from "./calculator";
+import { calculateResult } from "../src/utils/calculator";
 
 describe("calculator logic", () => {
   it("should handle basic addition", () => {
