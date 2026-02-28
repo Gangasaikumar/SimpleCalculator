@@ -1,39 +1,57 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuites name="vitest tests" tests="16" failures="0" errors="0" time="0.2075337">
-    <testsuite name="app_testcases/App.test.tsx" timestamp="2026-02-28T10:10:40.428Z" hostname="Gangasai_kumar" tests="6" failures="0" errors="0" skipped="0" time="0.2042775">
-        <testcase classname="app_testcases/App.test.tsx" name="App Component &gt; renders the calculator display" time="0.1135378">
+<testsuites name="vitest tests" tests="24" failures="0" errors="0" time="0.4942382">
+    <testsuite name="app_testcases/App.test.tsx" timestamp="2026-02-28T11:27:19.818Z" hostname="Gangasai_kumar" tests="6" failures="0" errors="0" skipped="0" time="0.4869681">
+        <testcase classname="app_testcases/App.test.tsx" name="App Component &gt; renders the calculator display" time="0.1743517">
         </testcase>
-        <testcase classname="app_testcases/App.test.tsx" name="App Component &gt; updates display when number buttons are clicked" time="0.0228807">
+        <testcase classname="app_testcases/App.test.tsx" name="App Component &gt; updates display when number buttons are clicked" time="0.05389">
         </testcase>
-        <testcase classname="app_testcases/App.test.tsx" name="App Component &gt; performs addition correctly" time="0.0195587">
+        <testcase classname="app_testcases/App.test.tsx" name="App Component &gt; performs addition correctly" time="0.1504107">
         </testcase>
-        <testcase classname="app_testcases/App.test.tsx" name="App Component &gt; clears the display when AC is clicked" time="0.0172325">
+        <testcase classname="app_testcases/App.test.tsx" name="App Component &gt; clears the display when AC is clicked" time="0.0532923">
         </testcase>
-        <testcase classname="app_testcases/App.test.tsx" name="App Component &gt; deletes the last character when DEL is clicked" time="0.0147416">
+        <testcase classname="app_testcases/App.test.tsx" name="App Component &gt; deletes the last character when DEL is clicked" time="0.0371715">
         </testcase>
-        <testcase classname="app_testcases/App.test.tsx" name="App Component &gt; shows Error for invalid expressions" time="0.0147967">
+        <testcase classname="app_testcases/App.test.tsx" name="App Component &gt; shows Error for invalid expressions" time="0.0151484">
         </testcase>
     </testsuite>
-    <testsuite name="app_testcases/calculator.test.ts" timestamp="2026-02-28T10:10:40.434Z" hostname="Gangasai_kumar" tests="10" failures="0" errors="0" skipped="0" time="0.0032562">
-        <testcase classname="app_testcases/calculator.test.ts" name="calculator logic &gt; should handle basic addition" time="0.0008951">
+    <testsuite name="app_testcases/calculator.test.ts" timestamp="2026-02-28T11:27:19.820Z" hostname="Gangasai_kumar" tests="10" failures="0" errors="0" skipped="0" time="0.0034555">
+        <testcase classname="app_testcases/calculator.test.ts" name="calculator logic &gt; should handle basic addition" time="0.000963">
         </testcase>
-        <testcase classname="app_testcases/calculator.test.ts" name="calculator logic &gt; should handle subtraction" time="0.0001607">
+        <testcase classname="app_testcases/calculator.test.ts" name="calculator logic &gt; should handle subtraction" time="0.0001553">
         </testcase>
-        <testcase classname="app_testcases/calculator.test.ts" name="calculator logic &gt; should handle multiplication" time="0.0001345">
+        <testcase classname="app_testcases/calculator.test.ts" name="calculator logic &gt; should handle multiplication" time="0.0001182">
         </testcase>
-        <testcase classname="app_testcases/calculator.test.ts" name="calculator logic &gt; should handle division" time="0.0001435">
+        <testcase classname="app_testcases/calculator.test.ts" name="calculator logic &gt; should handle division" time="0.0001322">
         </testcase>
-        <testcase classname="app_testcases/calculator.test.ts" name="calculator logic &gt; should handle percentage" time="0.0001203">
+        <testcase classname="app_testcases/calculator.test.ts" name="calculator logic &gt; should handle percentage" time="0.0001826">
         </testcase>
-        <testcase classname="app_testcases/calculator.test.ts" name="calculator logic &gt; should clear the output on AC" time="0.0000859">
+        <testcase classname="app_testcases/calculator.test.ts" name="calculator logic &gt; should clear the output on AC" time="0.0000803">
         </testcase>
-        <testcase classname="app_testcases/calculator.test.ts" name="calculator logic &gt; should delete the last character on DEL" time="0.0000952">
+        <testcase classname="app_testcases/calculator.test.ts" name="calculator logic &gt; should delete the last character on DEL" time="0.0001076">
         </testcase>
-        <testcase classname="app_testcases/calculator.test.ts" name="calculator logic &gt; should handle invalid expressions" time="0.0001187">
+        <testcase classname="app_testcases/calculator.test.ts" name="calculator logic &gt; should handle invalid expressions" time="0.0001788">
         </testcase>
-        <testcase classname="app_testcases/calculator.test.ts" name="calculator logic &gt; should not allow starting with a special character" time="0.0001044">
+        <testcase classname="app_testcases/calculator.test.ts" name="calculator logic &gt; should not allow starting with a special character" time="0.0001025">
         </testcase>
-        <testcase classname="app_testcases/calculator.test.ts" name="calculator logic &gt; should append numbers and operators" time="0.000124">
+        <testcase classname="app_testcases/calculator.test.ts" name="calculator logic &gt; should append numbers and operators" time="0.0001405">
+        </testcase>
+    </testsuite>
+    <testsuite name="app_testcases/math_operations.test.ts" timestamp="2026-02-28T11:27:19.823Z" hostname="Gangasai_kumar" tests="8" failures="0" errors="0" skipped="0" time="0.0038146">
+        <testcase classname="app_testcases/math_operations.test.ts" name="Multiplication and Division operations &gt; Multiplication &gt; should multiply two positive numbers" time="0.0009242">
+        </testcase>
+        <testcase classname="app_testcases/math_operations.test.ts" name="Multiplication and Division operations &gt; Multiplication &gt; should multiply positive and negative numbers" time="0.0002162">
+        </testcase>
+        <testcase classname="app_testcases/math_operations.test.ts" name="Multiplication and Division operations &gt; Multiplication &gt; should multiply two decimal numbers" time="0.0001817">
+        </testcase>
+        <testcase classname="app_testcases/math_operations.test.ts" name="Multiplication and Division operations &gt; Multiplication &gt; should handle multiplication by zero" time="0.000224">
+        </testcase>
+        <testcase classname="app_testcases/math_operations.test.ts" name="Multiplication and Division operations &gt; Division &gt; should divide two positive numbers" time="0.0001352">
+        </testcase>
+        <testcase classname="app_testcases/math_operations.test.ts" name="Multiplication and Division operations &gt; Division &gt; should divide to result in a decimal" time="0.0000983">
+        </testcase>
+        <testcase classname="app_testcases/math_operations.test.ts" name="Multiplication and Division operations &gt; Division &gt; should handle division by zero" time="0.0001289">
+        </testcase>
+        <testcase classname="app_testcases/math_operations.test.ts" name="Multiplication and Division operations &gt; Division &gt; should handle negative division" time="0.0001307">
         </testcase>
     </testsuite>
 </testsuites>

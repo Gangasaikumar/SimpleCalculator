@@ -6,8 +6,9 @@ variables:
 
 before_script:
   - echo "Cloning latest code..."
+  - find . -mindepth 1 -delete
   - git clone $GITHUB_REPO .
-  - git checkout main
+  - git checkout $CI_COMMIT_REF_NAME || git checkout main
   - npm ci
 
 stages:
