@@ -22,18 +22,30 @@ install_dependencies:
       - node_modules/
     expire_in: 1 hour
 
-unit_tests:
+lint_code:
   stage: test
   script:
     - echo "Running linter..."
     - npm run lint
-    - echo "Running tests with coverage..."
+    - echo "Linting completed."
+
+unit_tests:
+  stage: test
+  script:
+    - echo "Running tests with coverage and reports..."
     - npm run test:coverage
-    - echo "Testing and coverage completed."
+    - echo "Testing completed."
   coverage: '/Statements\s*:\s*(\d+(?:\.\d+)?)%/'
   artifacts:
+    when: always
     paths:
       - coverage/
+      - junit.xml
+    reports:
+      junit: junit.xml
+      coverage_report:
+        coverage_format: cobertura
+        path: coverage/cobertura-coverage.xml
     expire_in: 1 week
 
 build_project:
