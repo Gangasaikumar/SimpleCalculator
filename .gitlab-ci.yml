@@ -24,11 +24,17 @@ unit_tests:
   stage: test
   script:
     - npm run test:coverage
+  coverage: '/All files\s*\|\s*([\d\.]+)/'
   artifacts:
     when: always
     paths:
       - coverage/
       - junit.xml
+    reports:
+      junit: junit.xml
+      coverage_report:
+        coverage_format: cobertura
+        path: coverage/cobertura-coverage.xml
 
 build_project:
   stage: build

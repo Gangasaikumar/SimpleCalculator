@@ -1,0 +1,81 @@
+<?xml version="1.0" ?>
+<!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
+<coverage lines-valid="21" lines-covered="21" line-rate="1" branches-valid="14" branches-covered="14" branch-rate="1" timestamp="1772280574744" complexity="0" version="0.1">
+  <sources>
+    <source>C:/Users/ganga/OneDrive/Desktop/gitlab test/SimpleCalculator</source>
+  </sources>
+  <packages>
+    <package name="src" line-rate="1" branch-rate="1">
+      <classes>
+        <class name="App.css" filename="src\App.css" line-rate="0" branch-rate="0">
+          <methods>
+          </methods>
+          <lines>
+          </lines>
+        </class>
+        <class name="App.tsx" filename="src\App.tsx" line-rate="1" branch-rate="1">
+          <methods>
+            <method name="(anonymous_0)" hits="21" signature="()V">
+              <lines>
+                <line number="6" hits="21"/>
+              </lines>
+            </method>
+            <method name="(anonymous_1)" hits="15" signature="()V">
+              <lines>
+                <line number="9" hits="15"/>
+              </lines>
+            </method>
+            <method name="(anonymous_2)" hits="420" signature="()V">
+              <lines>
+                <line number="39" hits="420"/>
+              </lines>
+            </method>
+            <method name="(anonymous_3)" hits="15" signature="()V">
+              <lines>
+                <line number="43" hits="15"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="6" hits="1" branch="false"/>
+            <line number="7" hits="21" branch="false"/>
+            <line number="9" hits="21" branch="false"/>
+            <line number="10" hits="15" branch="false"/>
+            <line number="11" hits="15" branch="false"/>
+            <line number="14" hits="21" branch="false"/>
+            <line number="39" hits="420" branch="false"/>
+            <line number="43" hits="15" branch="false"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="src.utils" line-rate="1" branch-rate="1">
+      <classes>
+        <class name="calculator.ts" filename="src\utils\calculator.ts" line-rate="1" branch-rate="1">
+          <methods>
+            <method name="(anonymous_0)" hits="34" signature="()V">
+              <lines>
+                <line number="3" hits="34"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="1" hits="3" branch="false"/>
+            <line number="3" hits="3" branch="false"/>
+            <line number="7" hits="34" branch="true" condition-coverage="100% (4/4)"/>
+            <line number="8" hits="16" branch="false"/>
+            <line number="12" hits="16" branch="false"/>
+            <line number="13" hits="16" branch="false"/>
+            <line number="15" hits="2" branch="false"/>
+            <line number="17" hits="18" branch="true" condition-coverage="100% (2/2)"/>
+            <line number="18" hits="2" branch="false"/>
+            <line number="19" hits="16" branch="true" condition-coverage="100% (2/2)"/>
+            <line number="20" hits="2" branch="false"/>
+            <line number="22" hits="14" branch="true" condition-coverage="100% (4/4)"/>
+            <line number="23" hits="13" branch="false"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+  </packages>
+</coverage>
