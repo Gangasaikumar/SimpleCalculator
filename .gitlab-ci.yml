@@ -7,7 +7,7 @@ variables:
 before_script:
   - echo "Cloning latest code..."
   - rm -rf $WORKDIR
-  - git clone $GITHUB_REPO $WORKDIR
+  - git clone $GITHUB_REPO .
   - cd $WORKDIR
   - git checkout main
   - npm ci # ⭐ install deps here
