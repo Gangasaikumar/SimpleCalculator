@@ -27,9 +27,14 @@ unit_tests:
   script:
     - echo "Running linter..."
     - npm run lint
-    - echo "Running tests..."
-    - npm run test
-    - echo "Testing completed."
+    - echo "Running tests with coverage..."
+    - npm run test:coverage
+    - echo "Testing and coverage completed."
+  coverage: '/Statements\s*:\s*(\d+(?:\.\d+)?)%/'
+  artifacts:
+    paths:
+      - coverage/
+    expire_in: 1 week
 
 build_project:
   stage: build
