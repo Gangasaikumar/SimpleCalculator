@@ -1,5 +1,20 @@
 image: node:latest
 
+# Clone GitHub repo dynamically
+variables:
+  GITHUB_REPO: "https://oauth2:${GITHUB_TOKEN}@github.com/YOUR_USER/YOUR_REPO.git"
+  WORKDIR: source
+
+before_script:
+  - echo "Cloning latest code from GitHub..."
+  - rm -rf $WORKDIR
+  - git clone $GITHUB_REPO $WORKDIR
+  - cd $WORKDIR
+  - git fetch --all
+  - git checkout $CI_COMMIT_REF_NAME || git checkout main
+  - echo "Latest commit:"
+  - git log -1 --oneline
+
 # Define cache to speed up jobs and keep logs clean
 cache:
   key: "project-deps-cache"
