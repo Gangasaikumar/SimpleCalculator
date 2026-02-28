@@ -2,7 +2,7 @@ image: node:latest
 
 # Clone GitHub repo dynamically
 variables:
-  GITHUB_REPO: "https://oauth2:${GITHUB_TOKEN}@github.com/YOUR_USER/YOUR_REPO.git"
+  GITHUB_REPO: "https://oauth2:${GITHUB_TOKEN}@github.com/Gangasaikumar/SimpleCalculator.git"
   WORKDIR: source
 
 before_script:
