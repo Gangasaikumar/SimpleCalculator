@@ -1,6 +1,5 @@
 image: node:latest
 
-# Clone GitHub repo dynamically
 variables:
   GITHUB_REPO: "https://oauth2:${GITHUB_TOKEN}@github.com/Gangasaikumar/SimpleCalculator.git"
   WORKDIR: source
@@ -10,16 +9,15 @@ before_script:
   - rm -rf $WORKDIR
   - git clone $GITHUB_REPO $WORKDIR
   - cd $WORKDIR
-  - git fetch --all
   - git checkout $CI_COMMIT_REF_NAME || git checkout main
   - echo "Latest commit:"
   - git log -1 --oneline
 
-# Define cache to speed up jobs and keep logs clean
+# ✅ FIXED CACHE PATHS
 cache:
   key: "project-deps-cache"
   paths:
-    - node_modules/
+    - $WORKDIR/node_modules/
 
 stages:
   - install
@@ -29,46 +27,44 @@ stages:
 install_dependencies:
   stage: install
   script:
-    - echo "Starting dependency installation..."
     - npm install --prefer-offline --no-audit
-    - echo "Dependencies installed successfully."
   artifacts:
     paths:
-      - node_modules/
+      - $WORKDIR/node_modules/
     expire_in: 1 hour
 
 lint_code:
   stage: test
+  dependencies:
+    - install_dependencies # ✅ ensures node_modules restored
   script:
-    - echo "Running linter..."
     - npm run lint
-    - echo "Linting completed."
 
 unit_tests:
   stage: test
+  dependencies:
+    - install_dependencies
   script:
-    - echo "Running tests with coverage and reports..."
     - npm run test:coverage
-    - echo "Testing completed."
   coverage: '/Statements\s*:\s*(\d+(?:\.\d+)?)%/'
   artifacts:
     when: always
     paths:
-      - coverage/
-      - junit.xml
+      - $WORKDIR/coverage/
+      - $WORKDIR/junit.xml
     reports:
-      junit: junit.xml
+      junit: $WORKDIR/junit.xml
       coverage_report:
         coverage_format: cobertura
-        path: coverage/cobertura-coverage.xml
+        path: $WORKDIR/coverage/cobertura-coverage.xml
     expire_in: 1 week
 
 build_project:
   stage: build
+  dependencies:
+    - install_dependencies
   script:
-    - echo "Starting build process..."
     - npm run build
-    - echo "Build completed successfully."
   artifacts:
     paths:
-      - dist/
+      - $WORKDIR/dist/
