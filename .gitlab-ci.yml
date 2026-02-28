@@ -5,64 +5,33 @@ variables:
   WORKDIR: source
 
 before_script:
-  - echo "Cloning latest code from GitHub..."
+  - echo "Cloning latest code..."
   - rm -rf $WORKDIR
   - git clone $GITHUB_REPO $WORKDIR
   - cd $WORKDIR
-  - git checkout $CI_COMMIT_REF_NAME || git checkout main
-  - echo "Latest commit:"
-  - git log -1 --oneline
-
-# ✅ FIXED CACHE PATHS
-cache:
-  key: "project-deps-cache"
-  paths:
-    - $WORKDIR/node_modules/
+  - git checkout main
+  - npm ci # ⭐ install deps here
 
 stages:
-  - install
   - test
   - build
 
-install_dependencies:
-  stage: install
-  script:
-    - npm install --prefer-offline --no-audit
-  artifacts:
-    paths:
-      - $WORKDIR/node_modules/
-    expire_in: 1 hour
-
 lint_code:
   stage: test
-  dependencies:
-    - install_dependencies # ✅ ensures node_modules restored
   script:
     - npm run lint
 
 unit_tests:
   stage: test
-  dependencies:
-    - install_dependencies
   script:
     - npm run test:coverage
-  coverage: '/Statements\s*:\s*(\d+(?:\.\d+)?)%/'
   artifacts:
     when: always
     paths:
       - $WORKDIR/coverage/
-      - $WORKDIR/junit.xml
-    reports:
-      junit: $WORKDIR/junit.xml
-      coverage_report:
-        coverage_format: cobertura
-        path: $WORKDIR/coverage/cobertura-coverage.xml
-    expire_in: 1 week
 
 build_project:
   stage: build
-  dependencies:
-    - install_dependencies
   script:
     - npm run build
   artifacts:
